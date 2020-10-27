@@ -11,6 +11,10 @@ const config = {
       username: '',
       password: '',
       /*
+      baseURL: 'http://localhost/ihris-rdc/index.php/FHIR/',
+      username: '',
+      password: '',
+      //
       baseURL: 'http://192.168.1.100:8083/hapi/fhir',
       username: 'hapi',
       password: 'hapi',*/
@@ -43,7 +47,7 @@ let resources = [
 ];
 */
 let resources = [
-  'ValueSet'
+  'PractitionerRole'
 ];
 
 async.eachSeries(resources, (resource, nxtResource) => {

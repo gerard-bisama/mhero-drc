@@ -57,7 +57,7 @@ spring:
     driveClassName: org.postgresql.Driver
   jpa:
     properties:
-      hibernate.dialect: org.hi bernate.dialect.PostgreSQL95Dialect
+      hibernate.dialect: org.hibernate.dialect.PostgreSQL95Dialect
       hibernate.search.default.indexBase=/var/lib/tomcat9/target/lucenefiles
 hapi:
   fhir:

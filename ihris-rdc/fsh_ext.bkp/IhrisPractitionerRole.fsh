@@ -30,10 +30,27 @@ Description:    "iHRIS profile of Practitioner Role."
 * practitioner 0..1 MS
 * practitioner ^label = "Health Worker"
 * code 1..1 MS
-* code ^label = "Job"
-* code from http://ihris.org/fhir/ValueSet/ihris-job
+* code ^label = "Catégories"
+* code from http://ihris.org/fhir/ValueSet/ihris-cadre-rdc
 * code.coding 1..1 MS
 * specialty 0..* MS
 * specialty ^label = "Specialty"
 * location 1..1 MS
 * location ^label = "Facility"
+* extension contains 
+    IhrisPractitionerRoleJob named fonction 0..1 MS
+* extension[fonction].valueCoding MS
+* extension[fonction] ^label = "Fonction"
+
+
+Extension:      IhrisPractitionerRoleJob
+Id:             ihris-practitionerrole-job
+Title:          "iHRIS PractitionerRole JobTitle"
+Description:    "iHRIS extension for PractitionerRole Job."
+* ^context.type = #element
+* ^context.expression = "PractitionerRole"
+//* ^context.expression = "Position"
+* value[x] only Coding
+* valueCoding 1..1 MS
+* valueCoding ^label = "Fonction"
+* valueCoding from http://hl7.org/fhir/ValueSet/ihris-job-rdc
