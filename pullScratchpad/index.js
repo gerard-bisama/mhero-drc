@@ -22,7 +22,7 @@ const config = {
   },
   local: {
     fhir: {
-      baseURL: 'http://192.168.1.100:8083/hapi/fhir',
+      baseURL: 'http://localhost:8082/hapi/fhir',
       username: '',
       password: '',
     },
@@ -47,7 +47,7 @@ let resources = [
 ];
 */
 let resources = [
-  'PractitionerRole'
+  'Practitioner'
 ];
 
 async.eachSeries(resources, (resource, nxtResource) => {
@@ -60,7 +60,7 @@ async.eachSeries(resources, (resource, nxtResource) => {
     console.log(`Processing ${resourceData.entry.length} of resource ${resource}`)
     for (let data of resourceData.entry) {
       if (!data.resource || !data.resource.resourceType) {
-        continue;
+        continue;op
       }
       
        bundle.entry.push({
